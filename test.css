@@ -4,7 +4,7 @@
   /* Коефіцієнти для висоти блоків у лівій і правій колонках */
   --left-head-fraction: 1;
   --left-aside-fraction: 5;
-  --left-footer-fraction: 1;
+  --left-footer-fraction: 1.5;
   --right-menu-fraction: 1;
   --right-main-fraction: 5;
 
@@ -13,12 +13,12 @@
   --right-column-sum: calc(var(--right-menu-fraction) + var(--right-main-fraction));
 
   /* Висоти блоків з урахуванням відступів */
-  --left-head-height: calc((var(--left-head-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
-  --left-aside-height: calc((var(--left-aside-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
-  --left-footer-height: calc((var(--left-footer-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
-  --right-menu-height: calc((var(--right-menu-fraction) * 100%/ var(--right-column-sum)) - (2 * var(--margin)));
-  --right-main-height: calc((var(--right-main-fraction) * 100%/ var(--right-column-sum)) - (2 * var(--margin)));
-  --center-main-height: calc(100% - (2 * var(--margin)));
+  --left-head-height: calc((var(--left-head-fraction) * 100vh / var(--left-column-sum)) - (2 * var(--margin)));
+  --left-aside-height: calc((var(--left-aside-fraction) * 100vh / var(--left-column-sum)) - (2 * var(--margin)));
+  --left-footer-height: calc((var(--left-footer-fraction) * 100vh / var(--left-column-sum)) - (2 * var(--margin)));
+  --right-menu-height: calc((var(--right-menu-fraction) * 100vh/ var(--right-column-sum)) - (2 * var(--margin)));
+  --right-main-height: calc((var(--right-main-fraction) * 100vh/ var(--right-column-sum)) - (2 * var(--margin)));
+  --center-main-height: calc(100vh - (2 * var(--margin)));
 
   /* Коефіцієнти для ширини колонок */
   --left-column-fraction: 1;
@@ -57,23 +57,19 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   height: 100vh;
   width: 100vw;
 }
 
 /* Responsive Styling */
 img {
-  max-width: 100%;
+  max-width: 10%;
   height: auto;
 }
 
 /* Desktop */
 @media (min-width: 768px) {
-  .container {
-      flex-direction: row;
-      flex-wrap: nowrap;
-  }
-  
   .left {
       width: var(--left-column-width);
   }
@@ -88,25 +84,32 @@ img {
 
   /* Header */
   .header {
-      flex-basis: var(--left-head-height);
-      order: 1;
-      display: flex;
-      align-items: center;
+    order: 1;
+    flex-basis: var(--left-head-height);
+    /* align-self: baseline; */
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
   }
 
   .name {
-      flex: 1;
+    flex: 1;
   }
 
   .aside {
-      flex-basis: var(--left-aside-height);
-      order: 2;
+    flex-basis: var(--left-aside-height);
+    /* flex-grow: 1; */
+    /* height: 50%; */
+    order: 2;
+    flex-shrink: 0;
   }
 
   .footer {
-      flex-basis: var(--left-footer-height);
-      order: 3;
-      text-align: center;
+    flex-basis: var(--left-footer-height);
+    order: 3;
+    text-align: center;
+    align-self: flex-end;
+    flex-shrink: 0;
   }
 
   .main_first {
