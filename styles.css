@@ -1,0 +1,160 @@
+:root {
+  --margin: 5px;
+
+  /* Коефіцієнти для висоти блоків у лівій і правій колонках */
+  --left-head-fraction: 1;
+  --left-aside-fraction: 5;
+  --left-footer-fraction: 1;
+  --right-menu-fraction: 1;
+  --right-main-fraction: 5;
+
+  /* Суми коефіцієнтів для висоти лівої та правої колонок */
+  --left-column-sum: calc(var(--left-head-fraction) + var(--left-aside-fraction) + var(--left-footer-fraction));
+  --right-column-sum: calc(var(--right-menu-fraction) + var(--right-main-fraction));
+
+  /* Висоти блоків з урахуванням відступів */
+  --left-head-height: calc((var(--left-head-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
+  --left-aside-height: calc((var(--left-aside-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
+  --left-footer-height: calc((var(--left-footer-fraction) * 100% / var(--left-column-sum)) - (2 * var(--margin)));
+  --right-menu-height: calc((var(--right-menu-fraction) * 100%/ var(--right-column-sum)) - (2 * var(--margin)));
+  --right-main-height: calc((var(--right-main-fraction) * 100%/ var(--right-column-sum)) - (2 * var(--margin)));
+  --center-main-height: calc(100% - (2 * var(--margin)));
+
+  /* Коефіцієнти для ширини колонок */
+  --left-column-fraction: 1;
+  --center-column-fraction: 4;
+  --right-column-fraction: 2;
+
+  /* Сума коефіцієнтів колонок */
+  --columns-sum: calc(var(--left-column-fraction) + var(--center-column-fraction) + var(--right-column-fraction));
+
+  /* Ширини колонок з урахуванням відступів */
+  --left-column-width: calc((var(--left-column-fraction) * 100% / var(--columns-sum)) - (2 * var(--margin)));
+  --center-column-width: calc((var(--center-column-fraction) * 100%/ var(--columns-sum)) - (2 * var(--margin)));
+  --right-column-width: calc((var(--right-column-fraction) * 100% / var(--columns-sum)) - (2 * var(--margin)));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000209;
+  color: #fff;
+}
+
+.box {
+  background-color: #0D141E;
+  border: 2px solid #A18654;
+  padding: 20px;
+  margin: var(--margin);
+  justify-content: space-evenly;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .left{
+    width: var(--left-column-width);
+  }
+  
+  .center{
+    width: var(--center-column-width);
+  }
+
+  .right{
+    width: var(--right-column-width);
+  }
+
+  /* Header */
+  .header {
+    flex-basis: var(--left-head-height);
+    order: 1;
+    display: flex;
+  }
+ 
+  .logo{
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .name
+  {
+    flex: 1;
+    align-content: center;
+  }
+
+  img{
+    height: 100px;
+    width: 100px;
+  }
+
+  .aside {
+    flex-basis: var(--left-aside-height);
+    order: 2;
+  }
+
+  .footer {
+    flex-basis: var(--left-footer-height);
+    order: 3;
+  }
+
+  .main_first {
+    flex-basis: var(--center-main-height);
+    order: 4;
+  }
+
+  .menu {
+    flex-basis: var(--right-menu-height);
+    order: 5;
+  }
+
+  .main_second {
+    flex-basis: var(--right-main-height);
+    order: 6;
+  }
+}
+
+/* Phone */
+@media (max-width: 767px) {
+  .header {
+    flex: 0.5;
+    order: 1;
+  }
+
+  .menu {
+    flex: 0.5;
+    order: 2;
+  }
+
+  .main_first {
+    flex: 4;
+    order: 3;
+  }
+
+  .main_second {
+    flex: 3;
+    order: 4;
+  }
+
+  .aside {
+    flex: 2;
+    order: 5;
+  }
+
+  .footer {
+    flex: 0.5;
+    order: 6;
+  }
+}
