@@ -8,3 +8,7 @@ document.querySelectorAll('.menu__link').forEach(link => {
     });
   });
   
+  document.querySelector('.menu_button').addEventListener('click', function() {
+    const menuCategories = document.querySelector('.menu_categories');
+    menuCategories.classList.toggle('hidden');
+});
