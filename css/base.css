@@ -1,0 +1,16 @@
+@font-face {
+    font-family: Inknut_Antiqua;
+    src: url(/fonts/InknutAntiqua-Regular.ttf);
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Inknut_Antiqua, sans-serif;
+    background-color: #000209;
+    color: #fff;
+}
