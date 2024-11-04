@@ -5,54 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wand Manufacturer</title>
     <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/components.css">
     <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/aside.css">
+    <link rel="stylesheet" href="./css/main_first.css">
+    <link rel="stylesheet" href="./css/main_second.css">
+    <link rel="stylesheet" href="./css/aside.css">
     <link rel="stylesheet" href="./css/theme.css">
 </head>
 
 <body>
     <div class="container">
         <!-- Logo and Name -->
-        <header class="box left header">
-            <img class="logo" src="./image/logo.png" alt="Logo">
-            <div class="name">
-                <h1>Any Wands</h1>
-                <p>Crafting Magic Since 1487</p>
-            </div>
-        </header>
-
-    <!-- Other stores -->
-    <aside class="box left aside">
-        <h2>Explore Other Magical Stores</h2>
-        
-        <div class="about_stores">
-            <p>Discover our other magical stores where you can find unique artifacts and enchanted items.</p>
+    <header class="box left header">
+        <img class="logo" src="./image/logo.png" alt="Logo">
+        <div class="name">
+            <h1>Any Wands</h1>
+            <p>Crafting Magic Since 1487</p>
         </div>
+    </header>
 
-        <div class="stores">
-            <ul class="store_list">
-                <li>
-                    <a href="#brooms">
-                        <img src="./image/broom.png" alt="Brooms & gear">
-                        <span>Brooms & gear</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#potions">
-                        <img src="./image/potion.png" alt="Potions & ingredients">
-                        <span>Potions & ingredients</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#hats">
-                        <img src="./image/hat.png" alt="Hats & clothes">
-                        <span>Hats & clothes</span>
-                    </a>
-                </li>
-            </ul>
+    <!-- History of manufacturer -->
+    <aside class="box left aside">
+        <div class="aside_text">
+            <h2>Our Legacy</h2>
+            <p>Since its founding in 1452, Arcanum Wands has upheld a heritage of fine craftsmanship, fusing ancient magic with modern innovation. Our founder, Magnus Eldergrove, began with a single workshop in the heart of the Magical City, creating wands tailored to each wizard’s unique essence. Through centuries, we have honed the art of wand-making, passing down closely guarded techniques and sourcing only the rarest magical materials.</p>
+        </div>
+        <div class="aside_image">
+            <img src="/image/history.jpg" alt="Historical Image of Arcanum Wands Workshop">
         </div>
     </aside>
-
 
     <!-- Contacts and rights-->
     <footer class="box left footer">
@@ -64,7 +48,6 @@
                 <p>Email: <a href="mailto:anywands@gmail.com">anywands@gmail.com</a></p>
             </div>
         </div>
-
         <div class = "additional_info">
             <div class="social_media">
                 <a href="https://instagram.com">Instagram</a> |
@@ -74,67 +57,93 @@
             <div class="mischief" ><p >I solemnly swear that I am up to no good</p> </div>
             <div class="rights_reserved"> <p>&copy; 1487 Any Wands. All rights reserved.</p></div>
         </div>
-        
     </footer>
 
     <!-- About wands -->
-    <main class="box center main_first"> About wands
-        <!-- <div class="wands">
-            <h2>Про Наші Палички</h2>
-            <p>У нашій колекції є палички для новачків та професіоналів, виготовлені з різних магічних матеріалів. Кожна паличка має унікальні характеристики, що підсилюють магічну силу власника.</p>
-            <img src="/image/wands.jpg" alt="Wands Collection">
-        </div> -->
+    <main class="box center main_first">
+        <div class="main_first_name">
+            <h2>About Our Wands</h2>
+        </div>
+        <div class="main_first_text">
+            <p>At Any Wands, each wand is crafted with precision, care, and a deep connection to magical energy. Our wand-making process is steeped in tradition and innovation, combining ancient methods with modern craftsmanship to deliver a wand that perfectly aligns with its owner’s magical nature.</p>
+            <h3>Our Wand-Making Process</h3>
+            <p>1. <strong>Material Selection</strong>: The journey begins with selecting rare, magical materials. We source enchanted woods and powerful cores from the most magical locations worldwide to ensure each wand’s potency.</p>
+            <p>2. <strong>Core Binding</strong>: Next, the core—often phoenix feather, dragon heartstring, or unicorn hair—is bound to the wand. This delicate process involves rituals to ensure the core aligns with the wood's essence.</p>
+            <p>3. <strong>Enchanting and Polishing</strong>: Skilled craftsmen perform enchantments to awaken the wand’s power, enhancing its unique traits. Finally, each wand is polished by hand, giving it a refined, magical glow ready for its destined owner.</p>
+        </div>
+        <div class="main_first_gallery">
+            <button class="gallery-arrow left-arrow" onclick="prevImage()">&#9664;</button>
+            <img src="/image/wand1.jpeg" alt="Wand Image 1" id="gallery-image">
+            <button class="gallery-arrow right-arrow" onclick="nextImage()">&#9654;</button>
+        </div>
+        <div class="main_first_specialised">
+            <h3>Specialised Wands</h3>
+            <p>Add your personal touch, create a powerful and one-of-a-kind wand!</p>
+            <button onclick="window.location.href='#shop'" class="shop-button">Shop Now</button>
+        </div>
     </main>
-
-        <!-- Menu -->
-        <nav class="box right menu">
-            <div class="menu_bar">
-                <div class="menu_toggle">
-                    <button class="menu_button">
-                        <img src="./image/menu.png" alt="Menu Icon">
-                    </button>
-                    <button class="menu_button">
-                        <p>Menu</p>   <!--Delete <p>-->
-                    </button>
-                </div>
-                
-                <div class="search">
-                    <input type="text" placeholder="Revelio..">
-                    <button class="search_button">
-                        <img src="./image/search.png" alt="Search Icon">
-                    </button>
-                </div>
+    
+    <!-- Menu -->
+    <nav class="box right menu">
+        <div class="menu_bar">
+            <div class="menu_toggle">
+                <button class="menu_button">
+                    <img src="./image/menu.png" alt="Menu Icon">
+                </button>
+                <button class="menu_button">
+                    <p>Menu</p>   <!--Delete <p>-->
+                </button>
             </div>
-
-            <div class="categories">
-                <ul class="menu_categories hidden">
-                    <li><a href="#exclusive">Exclusive Wands</a></li>
-                    <li><a href="#protection">Protection Spells</a></li>
-                    <li><a href="#custom-order">Custom Order</a></li>
-                    <li><a href="#catalog">Wand Catalog</a></li>
-                </ul>
+            <div class="search">
+                <input type="text" placeholder="Revelio..">
+                <button class="search_button">
+                    <img src="./image/search.png" alt="Search Icon">
+                </button>
             </div>
-        </nav>
+        </div>
+        <div class="categories">
+            <ul class="menu_categories hidden">
+                <li><a href="#exclusive">Exclusive Wands</a></li>
+                <li><a href="#protection">Protection Spells</a></li>
+                <li><a href="#custom-order">Custom Order</a></li>
+                <li><a href="#catalog">Wand Catalog</a></li>
+            </ul>
+        </div>
+    </nav>
 
 
         <!-- Personalized wand-->
-        <section class="box right main_second"> Personalized wand
-
-            <!-- <div class="history">
-                <h2>Наша Історія</h2>
-                <p>Arcanum Wands - це сімейне ремесло, яке розпочалось у 1452 році. Ми продовжуємо традиції створення чарівних паличок, які передаються з покоління в покоління.</p>
+        <section class="box right main_second">
+            <h2>Explore Other Magical Stores</h2>
+        
+            <div class="about_stores">
+                <p>Discover our other magical stores where you can find unique artifacts and enchanted items.</p>
             </div>
-            
-            <div class="production">
-                <h2>Процес Виготовлення</h2>
-                <p>Кожна паличка створюється з увагою до деталей і чарівної енергії. Ми використовуємо тільки найкращі магічні матеріали для забезпечення якості кожного продукту.</p>
-            </div> -->
-
-            <!-- <h2>Індивідуальне Замовлення</h2>
-            <p>Замовте паличку, яка буде ідеально відповідати вашим унікальним потребам. Заповніть форму, і ми створимо паличку спеціально для вас.</p>
-            <button>Замовити паличку</button> -->
+    
+            <div class="stores">
+                <ul class="store_list">
+                    <li>
+                        <a href="#brooms">
+                            <img src="./image/broom.png" alt="Brooms & gear">
+                            <span>Brooms & gear</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#potions">
+                            <img src="./image/potion.png" alt="Potions & ingredients">
+                            <span>Potions & ingredients</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#hats">
+                            <img src="./image/hat.png" alt="Hats & clothes">
+                            <span>Hats & clothes</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </div>
-    <script src="script.js" defer></script>
+    <script src="./script/script.js" defer></script>
 </body>
 </html>

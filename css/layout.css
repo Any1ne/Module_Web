@@ -29,7 +29,7 @@
 }
 
 /* Desktop */
-@media (min-width: 1231px) {
+@media (min-width: 1301px) {
   .container {
     flex-direction: column;
     align-content: space-between;
@@ -66,7 +66,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     /* flex-basis: var(--left-aside-height);  */
     min-height: 750px;
   }
@@ -89,6 +89,8 @@
     /* flex-basis: var(--center-main-height);
     flex-grow: 1; */
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   /* Menu */
@@ -119,7 +121,7 @@
 }
 
 /*Tablet*/
-@media (min-width: 801px) and (max-width: 1230px) {
+@media (min-width: 801px) and (max-width: 1300px) {
   .container {
     /* TODO: min-height*/
     align-content:baseline;
@@ -170,11 +172,12 @@
     min-width: 170px;  /*TODO: After filling with content check for min-width*/
     width: calc(30% - (2 * var(--margin)));
 
-    min-height: 850px;
-    height: var(--left-aside-height);
+    min-height: 1200px;
+    /* height: var(--left-aside-height); */
 
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
   }
 
   .about_stores, .stores, .aside h2 {
@@ -185,16 +188,19 @@
   .main_first {
     order: 4;
     width: calc(45% - (2 * var(--margin)));
-    min-height: 850px;
-    height: var(--left-aside-height);
+    min-height: 1200px;
+    /* height: var(--left-aside-height); */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
       
   /* Main_second */
   .main_second {
     order: 5;
     width: calc(25% - (2 * var(--margin)));
-    min-height: 850px;
-    height: var(--left-aside-height);
+    min-height: 1200px;
+    /* height: var(--left-aside-height); */
     align-self: stretch;
     flex-shrink: 1;
   }
@@ -219,74 +225,74 @@
     }
 
     /* Header */
-    .header {
-      order: 1;
-      /* flex-basis: var(--left-head-height); */
-      flex-shrink: 0;    
-      display: flex;
-        /*align-items: center;*/
-    }
+  .header {
+    order: 1;
+    /* flex-basis: var(--left-head-height); */
+    flex-shrink: 0;    
+    display: flex;
+      /*align-items: center;*/
+  }
       /* Menu */
-    .menu {
-      order: 2;
-      /* flex-basis: var(--right-menu-height); */
-    }
+  .menu {
+    order: 2;
+    /* flex-basis: var(--right-menu-height); */
+  }
   
-    .menu_bar{
-      display: flex;
-      width: 100%;
-      align-items: center; 
-      justify-content: space-between; 
-      height: min-content;
-    }
+  .menu_bar{
+    display: flex;
+    width: 100%;
+    align-items: center; 
+    justify-content: space-between; 
+    height: min-content;
+  }
 
-    .categories{
-      display: flex;
-      width: 100%;
-    }
+  .categories{
+    display: flex;
+    width: 100%;
+  }
 
-    .menu_categories {
-      display: flex;
-      width: 100%;
-      list-style: none;
-      justify-content: space-between; 
-      gap: 5px;
-    }
+  .menu_categories {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-between; 
+    gap: 5px;
+  }
     
-    .menu_bar{
-      display: flex;
-      width: 100%;
-      align-items: center; 
-      justify-content: space-between; 
-    }  
+  .menu_bar{
+    display: flex;
+    width: 100%;
+    align-items: center; 
+    justify-content: space-between; 
+  }  
 
-      /* Aside */
-    .aside {
-      order: 3;
-      /* flex-basis: var(--left-aside-height); */
-      flex-grow: 1;
-      flex-shrink: 1;
-      max-height: var(--left-aside-height);
+  /* Main_first */
+  .main_first {
+    order: 3;
+    /* flex-basis: var(--center-main-height); */
+  }
 
-      display: flex;
-      flex-wrap: wrap;
-    }
+  /* Aside */
+  .aside {
+    order: 4;
+    /* flex-basis: var(--left-aside-height); */
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-height: var(--left-aside-height);
+
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /* Main_second */
+  .main_second {
+    order: 5;
+    /* flex-basis: var(--right-main-height); */
+  }
 
   .about_stores, .stores, .aside h2 {
     width:100%;
   }
-  
-    /* Main_first */
-    .main_first {
-      order: 4;
-      /* flex-basis: var(--center-main-height); */
-    }
-      
-    /* Main_second */
-    .main_second {
-      order: 5;
-      /* flex-basis: var(--right-main-height); */
-    }
       
     /* Footer */
     .footer {
