@@ -1,4 +1,4 @@
-const images = ["/image/wand0.jpeg", "/image/wand1.jpeg", "/image/wand2.jpeg", "/image/wand3.jpeg", "/image/wand4.jpeg"];
+const images = ["./image/wand0.jpeg", "./image/wand1.jpeg", "./image/wand2.jpeg", "./image/wand3.jpeg", "./image/wand4.jpeg"];
   let currentIndex = 0;
     
 function showImage(index) {
